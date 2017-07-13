@@ -61,10 +61,9 @@ switch (a) {
 
     function mtw() {
        client.get("statuses/user_timeline",{screen_name: "My DevHill app", count: 20}, function(error,tweets,response){
-           console.log("get is running");
-           var newTweets = JSON.parse(response.body);
+            var newTweets = JSON.parse(response.body);
 
-               for(var i = 0; i < 20; i++){
+               for(var i = 0; i <newTweets.length; i++){
                   console.log(newTweets[i].created_at);
                   console.log(newTweets[i].text);
                }
